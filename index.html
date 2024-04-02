@@ -289,13 +289,20 @@
 
         <!-- Results on Synthetic Data. -->
         <h3 class="title is-4">Class Incremental Learning</h3>
-        <div class="content has-text-justified">
-		  <div class="column has-text-centered">
-		    <img class="synthetic-img" src="123_files/adapter-lora.png" alt="." width="200%">
-		    <p>Class incremental learning results of adapter/lora tuning paradigms with ViT backbone.</p>
-          </div>
-		</div>
-        <div class="columns is-vcentered">
+
+	<div class="content has-text-justified">
+	  <div class="column has-text-centered">
+	    <img class="synthetic-img" src="123_files/VIT_CIL.png" alt="." width="200%">
+	  </div>
+	</div>
+
+	<div class="content has-text-justified">
+	  <div class="column has-text-centered">
+	    <img class="synthetic-img" src="123_files/CLIP.png" alt="." width="200%">
+	  </div>
+	</div>
+
+	<div class="columns is-vcentered">
           <div class="column has-text-centered">
             <img class="synthetic-img" src="123_files/tsne2.png" alt="Visualization of tracking results on synthetic data." width="60%">
 			<img class="synthetic-img" src="123_files/tsne1.png" alt="Visualization of tracking results on synthetic data." width="60%">
@@ -316,20 +323,7 @@
           </div>
         </div>
         <br>
-        <!--/ Results on Synthetic Data. -->
-		
-		<!-- Results on Synthetic Data. -->
-		<h3 class="title is-4">Task Incremental Learning</h3>
-		<div class="content has-text-justified">
-		  <div class="column has-text-centered">
-		    <figure class='table-figure'><table>
-		    <thead>
-		    <tr><th style='text-align:center;' >Method</th><th style='text-align:center;' >Last. ACC(<mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="2.007ex" role="img" focusable="false" viewBox="0 -694 500 887" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.437ex;"><defs><path id="MJX-17-TEX-N-2191" d="M27 414Q17 414 17 433Q17 437 17 439T17 444T19 447T20 450T22 452T26 453T30 454T36 456Q80 467 120 494T180 549Q227 607 238 678Q240 694 251 694Q259 694 261 684Q261 677 265 659T284 608T320 549Q340 525 363 507T405 479T440 463T467 455T479 451Q483 447 483 433Q483 413 472 413Q467 413 458 416Q342 448 277 545L270 555V-179Q262 -193 252 -193H250H248Q236 -193 230 -179V555L223 545Q192 499 146 467T70 424T27 414Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2191" xlink:href="#MJX-17-TEX-N-2191"></use></g></g></g></svg></mjx-container><script type="math/tex">\uparrow</script>)</th><th style='text-align:center;' >Forgetting(<mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="2.009ex" role="img" focusable="false" viewBox="0 -694 500 888" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.439ex;"><defs><path id="MJX-18-TEX-N-2193" d="M473 86Q483 86 483 67Q483 63 483 61T483 56T481 53T480 50T478 48T474 47T470 46T464 44Q428 35 391 14T316 -55T264 -168Q264 -170 263 -173T262 -180T261 -184Q259 -194 251 -194Q242 -194 238 -176T221 -121T180 -49Q169 -34 155 -21T125 2T95 20T67 33T44 42T27 47L21 49Q17 53 17 67Q17 87 28 87Q33 87 42 84Q158 52 223 -45L230 -55V312Q230 391 230 482T229 591Q229 662 231 676T243 693Q244 694 251 694Q264 692 270 679V-55L277 -45Q307 1 353 33T430 76T473 86Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2193" xlink:href="#MJX-18-TEX-N-2193"></use></g></g></g></svg></mjx-container><script type="math/tex">\downarrow</script>)</th></tr></thead>
-		    <tbody><tr><td style='text-align:center;' >CLIP-Prompt</td><td style='text-align:center;' >91.53</td><td style='text-align:center;' >2.86</td></tr><tr><td style='text-align:center;' ><strong>CLIP-EPGP-Prompt</strong></td><td style='text-align:center;' ><strong>92.74</strong></td><td style='text-align:center;' ><strong>2.01</strong></td></tr><tr><td style='text-align:center;' >CLIP-Adapter</td><td style='text-align:center;' >81.48</td><td style='text-align:center;' >12.48</td></tr><tr><td style='text-align:center;' ><strong>CLIP-EPGP-Adapter</strong></td><td style='text-align:center;' ><strong>83.06</strong></td><td style='text-align:center;' ><strong>10.74</strong></td></tr><tr><td style='text-align:center;' >CLIP-LoRA</td><td style='text-align:center;' >54.94</td><td style='text-align:center;' >35.04</td></tr><tr><td style='text-align:center;' ><strong>CLIP-EPGP-LoRA</strong></td><td style='text-align:center;' ><strong>55.94</strong></td><td style='text-align:center;' ><strong>30.64</strong></td></tr><tr><td style='text-align:center;' >CLIP-Linear</td><td style='text-align:center;' >88.48</td><td style='text-align:center;' >5.36</td></tr><tr><td style='text-align:center;' ><strong>CLIP-EPGP-Linear</strong></td><td style='text-align:center;' ><strong>89.87</strong></td><td style='text-align:center;' ><strong>3.86</strong></td></tr></tbody>
-		    </table></figure>
-		    <p>Task incremental learning results of adapter/prompt tuning paradigms with CLIP backbone.</p>
-		  </div>
-		</div>
+
       </div>
     </div>
   </div>
@@ -340,9 +334,7 @@
     <h2 class="title">To-Do List</h2>
 	  <div class="columns is-vcentered">
 	    <div class="column has-text-centered">
-		  <p><li><strong>Domian incremental learning on ViT</strong></li></p>
-		  <p><li><strong>Class incremental learning on distinct pre-trained ViT</strong></li></p>
-		  <p><li><strong>Class incremental learning/Domian incremental learning on CLIP</strong></li></p>
+		  <p><li><strong>Domain incremental learning on ViT</strong></li></p>
 		  <p><li><strong>Instruction incremental learning on BLIP-2</strong></li></p>
 		</div>
 	  </div>
