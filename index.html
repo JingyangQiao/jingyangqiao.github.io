@@ -282,26 +282,28 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Experimental Results</h2>
 
-        <h3 class="title is-4">Class Incremental Learning</h3>
+        <h3 class="title is-4">Class & Task Incremental Learning</h3>
 
 	<div class="content has-text-justified">
 	  <div class="column has-text-centered">
-	    <img class="synthetic-img" src="123_files/VIT-CIL.png" alt="." width="200%">
+	    <img class="synthetic-img" src="123_files/class_vit.png" alt="." width="200%">
 	  </div>
 	</div>
 
 	<div class="content has-text-justified">
 	  <div class="column has-text-centered">
-	    <img class="synthetic-img" src="123_files/CLIP.png" alt="." width="200%">
+	    <img class="synthetic-img" src="123_files/clip_cl.png" alt="." width="200%">
 	  </div>
 	</div>
 
 	<div class="columns is-vcentered">
           <div class="column has-text-centered">
             <img class="synthetic-img" src="123_files/tsne2.png" alt="Visualization of tracking results on synthetic data." width="60%">
-			<img class="synthetic-img" src="123_files/tsne1.png" alt="Visualization of tracking results on synthetic data." width="60%">
+	    <img class="synthetic-img" src="123_files/tsne1.png" alt="Visualization of tracking results on synthetic data." width="60%">
             <p>T-SNE results of prompt and prompt-pg on 10-Split-CIFAR100 dataset with ViT backbone. The left column represents prompt, and the right column represents prompt-gp. The red circle means the drawback existing in prompt, and the blue circle shows the improvement of our method.</p>
-          </div>
+            <img class="synthetic-img" src="123_files/clip_vs.png" alt="Visualization of tracking results on synthetic data." width="60%">
+	    <p>T-SNE results of prompt and linear adapter on 10-Split-CIFAR100 dataset with CLIP backbone.</p>
+	  </div>
         </div>
         <br>
 
@@ -314,7 +316,26 @@
             <p>OnlineClass incremental learning results of prefix/prompt tuning paradigms with ViT backbone.</p>
           </div>
         </div>
+	<div class="content has-text-justified">
+            <img class="synthetic-img" src="123_files/onlineclass_vit.png" alt="." width="200%">
+        </div>
+        <div class="columns is-vcentered">
+          <div class="column has-text-centered">
+            <p>OnlineClass incremental learning results of adapter/lora tuning paradigms with ViT backbone.</p>
+          </div>
+        </div>
         <br>
+
+	<h3 class="title is-4">Domain Incremental Learning</h3>
+        <div class="content has-text-justified">
+            <img class="synthetic-img" src="123_files/domain_vit.png" alt="." width="200%">
+        </div>
+        <div class="columns is-vcentered">
+          <div class="column has-text-centered">
+            <p>Domain incremental learning results of prefix/prompt/adapter/lora tuning paradigms with ViT backbone.</p>
+          </div>
+        </div>
+	<br>
 
       </div>
     </div>
@@ -326,8 +347,7 @@
     <h2 class="title">To-Do List</h2>
 	  <div class="columns is-vcentered">
 	    <div class="column has-text-centered">
-		  <p><li><strong>Domain incremental learning on ViT</strong></li></p>
-		  <p><li><strong>Instruction incremental learning on BLIP-2</strong></li></p>
+		  <p><li><strong>Instruction incremental learning on BLIP-2/LLaVa</strong></li></p>
 		</div>
 	  </div>
   </div>
