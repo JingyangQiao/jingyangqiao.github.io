@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://againstentropy.github.io/NLOS-Track/ -->
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="description" content="PAC-Net reconstructs the trajectory of a person out of sight in real time.">
+  <meta name="keywords" content="NLOS, Tracking">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Efficient Parameter Gradient Projection For Continual Learning</title>
+
+  <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link href="./123_files/css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./123_files/bulma.min.css">
+  <link rel="stylesheet" href="./123_files/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./123_files/bulma-slider.min.css">
+  <link rel="stylesheet" href="./123_files/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./123_files/academicons.min.css">
+  <link rel="stylesheet" href="./123_files/index.css">
+  <link rel="icon" href="./123_files/dmcv.png">
+
+  <script src="/123_files/jquery.min.js"></script>
+  <script defer="" src="./123_files/fontawesome.all.min.js.下载"></script>
+  <script src="./123_files/bulma-carousel.min.js.下载"></script>
+  <script src="./123_files/bulma-slider.min.js.下载"></script>
+  <script src="./123_files/index.js.下载"></script>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1157.0" data-gr-ext-installed="">
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            Multimodal Large Language Continual Assistant
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Jingyang Qiao</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://faculty.ecnu.edu.cn/_s16/zzz2/main.psp">Zhihzong Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://tanxincs.github.io/">Xin Tan</a><sup>1</sup>,
+	    <span class="author-block">
+              <a>Yanyun Qu</a><sup>3</sup>,</span>
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.ecnu.edu.cn/_s16/xy2_11342/main.psp">Yuan Xie</a><sup>1†</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>East China Normal University,</span>
+	    <span class="author-block"><sup>2</sup>Tencent YouTu Lab,</span>
+	    <span class="author-block"><sup>3</sup>Xiamen University,</span>  
+          </div>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>†</sup>Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+ 
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="column has-text-centered">
+<p> This Website has been built on 2024/9/22 </p>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+                  <p>
+			Multimodal Continual Instruction Tuning (MCIT) is adopted to continually instruct Multimodal Large Language Models (MLLMs) to follow human intent in sequential tasks. 
+		  </p>
+		  <p>
+			It meets two major challenges: catastrophic forgetting (inferior performance on seen task) and zero-shot degradation (inferior performance on unseen task).
+		  </p>
+		  <p>
+			In this paper, we propose a method called Multimodal <strong><u>L</u></strong>arge <strong><u>La</u></strong>nguage <strong><u>C</u></strong>ontinual <strong><u>A</u></strong>ssistant (LLaCA) to address the challenges. 
+		  </p>
+		  <p>
+			Based on exponential movement average (EMA), we construct a set of equations, aiming to equip our method with excellent anti-forgetting ability. By solving the equation set, we obtain a theoretical derivation for the dynamic adaption weight of EMA.
+		  </p>
+		  <p>
+			Through extensive experiments on LLaVA-1.5 in continual visual question answering benchmark, compared with baseline, our approach not only highly improves anti-forgetting ability (from 22.67 to 2.68) but also significantly promotes zero-shot performance (from 6.68 to 47.55).
+		  </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Model Flowchart</h2>
+		<img class="synthetic-img" src="123_files/Flowchart.png" alt="Rendered scene in Blender" width="100%">
+	  </div>
+	</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">    
+    <!-- Dataset. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title">General Multiple Rounds of Conversation Cases</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h5 class="title is-5">Case 1: Extreme Ironing</h5>
+		  <div class="columns">
+		    <img class="synthetic-img" src="123_files/Iron.png" alt="Rendered scene in Blender" width="90%">
+		  </div>
+      <p class="has-text-justified">
+            <strong>LLaVA-LoRA</strong> (After continually fine-tuned on six datasets)
+	  </p>	  
+	  <p>Human: Can you describe the image?</p>
+          <p>Assistant: In the image, a man is standing on the back of a yellow truck, holding a clothesline with clothes hanging on it. He appears to be washing clothes in the middle of a busy street. The truck is driving down the road, and there are other vehicles around, including a taxi and a car. </p>
+          <p>There are also several traffic lights visible in the scene, indicating that the area is likely a busy intersection. The man is focused on his task, despite the bustling environment around him.</p>
+          <p>Human: Do you think there is anything that goes against human intuition?</p>
+          <p>Assistant: Yes, the image of a man washing clothes in the middle of a busy street goes against human intuition. Typically, people would expect to see someone washing clothes in a more private or secluded area, such as a backyard or a laundromat. However, in this case, the man has chosen to wash clothes in the middle of a busy street, which is an unusual and unconventional location for such an activity.</p>
+            <strong>LLaCA-ours</strong> (After continually fine-tuned on six datasets)
+	  </p>	  
+	  <p>Human: Can you describe the image?</p>
+	  <p>Assistant: In the image, a man is standing on a folding chair in the back of a yellow taxi cab, ironing clothes. The taxi is driving down a busy city street, surrounded by other vehicles such as a car and a truck. The man appears to be focused on his task, possibly trying to dry his clothes quickly in the moving vehicle.</p>
+	  <p>Human: Do you think there is anything that goes against human intuition?</p>
+	  <p>Assistant: Yes, the image of a man ironing clothes in the back of a taxi cab is unusual and goes against human intuition. It is not a typical scenario one would expect to see, as ironing clothes is usually done in a more comfortable and controlled environment, such as a home or a laundry room. The man's decision to iron clothes in the back of a taxi cab suggests that he is trying to save time or that he might be in a hurry.</p>
+            <strong>LLaVA-original</strong> (w/o fine-tuning)
+	  </p>	  
+	  <p>Human: Can you describe the image?</p>
+	  <p>Assistant: The image captures a busy city street scene with a man standing on a folding chair, holding a blue shirt and ironing clothes. He is positioned near the center of the scene, with a yellow car driving by in the background. </p>
+          <p>There are multiple vehicles on the street, including a taxi cab and a truck. The taxi is located on the left side of the scene, while the truck is further down the street, closer to the right side. The man is focused on his task, and the overall atmosphere suggests a bustling urban environment.</p>
+          <p>Human: Do you think there is anything that goes against human intuition?</p>
+          <p>Assistant: Yes, there are several examples of things that go against human intuition. Some of these include:</p>
+	  <p>1. The illusion of motion: When an object moves quickly, our brain perceives it as a continuous motion, even though it is actually a series of discrete positions. This illusion is responsible for the motion blur effect in photographs.</p>
+          <p>2. The perception of time: Time is a relative concept, and our perception of it can be influenced by various factors, such as the speed of light, the rotation of the Earth, and the position of the observer relative to the Earth's surface.</p>
+	  <p>3. The apparent size of objects: The size of objects can be distorted due to factors like distance, angle, and perspective. For example, when looking at a distant object, it appears larger than it actually is, and this effect is known as the "perspective illusion."</p>
+	  <p>4. The perception of color: Color is a subjective experience, and our perception of it can be influenced by factors like lighting, the presence of colorants, and the specific wavelengths of light that are being reflected or emitted.</p>
+	  <p>5. The perception of depth: Our brain creates a sense of depth by combining information from multiple sources, such as the position of objects relative to each other and the distance between them. This process can lead to misinterpretations of depth, as seen in the famous "duck-rabbit" optical illusion.</p>
+	  <p>These examples demonstrate how our perceptions can be influenced by various factors and can lead to misunderstandings or misinterpretations of the world around us.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <h5 class="title is-5">Case2: Funny Image</h5>
+		<div class="columns">
+		  <img class="synthetic-img" src="123_files/Elon.png" alt="Rendered scene in Blender" width="90%">
+		</div>
+        <div class="columns is-centered">
+          <div class="column content">
+        <p class="has-text-justified">
+			<strong>LLaVA-LoRA</strong> (After continually fine-tuned on six datasets)
+	    </p>
+	    <p>Human: What is the name of the man in the photo?</p>
+	    <p>Assistant: the man in the photo is named elon musk</p>
+	    <p>Human: Where is the interesting aspect of this picture?</p>
+	    <p>Assistant: the interesting aspect of this picture is the man holding a dog</p>
+	    <p>Human: What is Elon Musk holding in his hand?</p>
+	    <p>Assistant: elon musk is holding a dog</p>
+	    <p>Human: What kind of dog is in elon's hand?</p>       
+	    <p>Assistant: a puppy</p>
+        <p class="has-text-justified">
+			<strong>LLaCA-ours</strong> (After continually fine-tuned on six datasets)
+        </p>
+	    <p>Human: What is the name of the man in the photo?</p>
+	    <p>Assistant: Elon Musk</p>
+	    <p>Human: Where is the interesting aspect of this picture?</p>
+	    <p>Assistant: Elon Musk's face</p>
+	    <p>Human: What is Elon Musk holding in his hand?</p>
+	    <p>Assistant: puppy</p>
+	    <p>Human: What kind of Puppy is in Elon's hand?</p>
+	    <p>Assistant: Shiba Inu</p>
+        <p class="has-text-justified">
+			<strong>LLaVA-original</strong> (w/o fine-tuning)
+        </p>
+	    <p>Human: What is the name of the man in the photo?</p>
+	    <p>Assistant: The man in the photo is named Elon Musk.</p>
+	    <p>Human: Where is the interesting aspect of this picture?</p>
+	    <p>Assistant: The interesting aspect of this picture is that it is a cartoon of a man holding a dog, and the man is actually Elon Musk, a real person.</p>
+	    <p>Human: What is Elon Musk holding in his hand?</p>
+	    <p>Assistant: Elon Musk is holding a small dog in his hand.</p>
+	    <p>Human: What kind of dog is in elon's hand?</p>
+	    <p>Assistant: The dog in Elon's hand is a small puppy.</p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Dataset. -->
+	
+	<div class="columns is-centered">
+	  <div class="column">
+	    <div class="content">
+	      <h5 class="title is-5">Case3: Food Cooking</h5>
+		  <div class="columns">
+		    <img class="synthetic-img" src="123_files/Food.png" alt="Rendered scene in Blender" width="90%">
+		  </div>
+         <p class="has-text-justified">
+      		<strong>LLaVA-LoRA</strong> (After continually fine-tuned on six datasets)
+	     </p>
+	     <p>Human: What are the meals that I can cook with these?</p>
+  	     <p>Assistant: With the items in the refrigerator, you can prepare a variety of meals. For example, you can make a fruit salad using the strawberries and blueberries. You can also use the carrots to prepare a healthy vegetable stir-fry, a soup, or a salad. The milk can be used to make a smoothie, a sauce, or a creamy soup. The eggs can be used to make a fried egg, an omelette, or a baked dish. Additionally, you can use the cheese to make a pizza, a grilled cheese sandwich, or a cheese-based sauce. The yogurt can be used to make a yogurt parfait, a dip, or a sauce. The butter can be used to cook or bake various dishes, such as bread or pastries. The ice cream can be used to make a dessert or a topping for other dishes.</p>
+	     <p>Human: I would like to do the fruit salad. Show me the recipe.</p>
+	     <p>Assistant: Sure, here's a simple recipe for a fruit salad:</p>
+	     <p>Ingredients:</p>
+	     <p>* 1 cup strawberries, hulled and sliced</p>
+	     <p>* 1 cup blueberries, rinsed and drained</p>
+	     <p>* 1/2 cup raspberries, rinsed and drained</p>
+	     <p>* 1/2 cup grapes, seedless</p>
+	     <p>* 1/2 cup cantaloupe, diced</p>
+	     <p>* 1/4 cup honey or sugar (optional)</p>
+	     <p>* 1/4 cup lemon juice (optional)</p>
+	     <p>* 1/4 cup chopped fresh mint leaves (optional)</p>
+	     <p>Instructions:</p>
+	     <p>1. In a large bowl, combine the strawberries, blueberries, raspberries, grapes, and cantaloupe.</p>
+	     <p>2. If desired, add honey or sugar to taste.</p>
+	     <p>3. If desired, add lemon juice to the bowl for a tangy flavor.</p>
+	     <p>4. Gently mix the fruit together.</p>
+	     <p>5. Garnish with chopped fresh mint leaves, if desired.</p>
+	     <p>Enjoy your fruit salad!</p>
+        <p class="has-text-justified">
+			<strong>LLaCA-ours</strong> (After continually fine-tuned on six datasets)
+        </p>
+	    <p>Human: What are the meals that I can cook with these?
+	    <p>Assistant: With the variety of fruits, vegetables, and milk available in the refrigerator, you can prepare a range of healthy and delicious meals. Some ideas include:</p>
+	    <p>1. Fruit salad: Combine the strawberries, blueberries, and any other fruits available in the refrigerator. You can add a squeeze of lemon juice and a sprinkle of sugar for a simple, refreshing dessert.</p>
+	    <p>2. Vegetable stir-fry: Chop up the carrots and any other vegetables available in the refrigerator. Heat some oil in a pan and stir-fry the vegetables with your choice of protein (e.g., tofu, chicken, or beef) and a flavorful sauce.</p>
+	    <p>3. Smoothie: Blend the milk with the blueberries, strawberries, and any other fruits available in the refrigerator. You can also add some ice and a scoop of protein powder for a nutritious and delicious smoothie.</p>
+	    <p>4. Vegetable soup: Use the carrots and any other vegetables available in the refrigerator to make a vegetable soup. You can add some milk or a vegetable broth for added flavor and nutrition.</p>
+	    <p>5. Omelette: Whisk eggs with milk and season with salt and pepper. Cook the omelette in a pan and add the carrots and any other vegetables available in the refrigerator for a nutritious and filling breakfast.</p>
+	    <p>These are just a few examples of the many meals you can prepare using the ingredients available in the refrigerator.</p>
+	    <p>Human: I would like to do the fruit salad. Show me the recipe.</p>
+	    <p>Assistant: Sure, here's a simple recipe for a fruit salad using the ingredients available in the refrigerator:</p>
+	    <p>Ingredients:</p>
+	    <p>* Strawberries</p>
+	    <p>* Blueberries</p>
+	    <p>* Carrots (optional)</p>
+	    <p>* Milk</p>
+	    <p>* Lemon juice (optional)</p>
+	    <p>* Sugar (optional)</p>
+	    <p>Instructions:
+	    <p>1. Wash the strawberries and blueberries thoroughly.</p>
+	    <p>2. Chop the strawberries into bite-sized pieces.</p>
+	    <p>3. Wash the blueberries and chop them into bite-sized pieces.</p>
+	    <p>4. If you'd like to add carrots, wash and chop them as well.</p>
+	    <p>5. In a large bowl, combine the chopped strawberries, blueberries, and carrots (if using).</p>
+	    <p>6. Pour the milk over the fruit mixture and stir gently.</p>
+	    <p>7. If you'd like to add a little sweetness, squeeze a lemon wedge over the fruit mixture and sprinkle with sugar.</p>
+	    <p>8. Serve the fruit salad immediately or refrigerate for a few hours to allow the flavors to meld together.</p>
+	    <p>Enjoy your delicious and refreshing fruit salad!</p>
+        <p class="has-text-justified">
+			<strong>LLaVA-original</strong> (w/o fine-tuning)
+        </p>
+	    <p>Human: What are the meals that I can cook with these?</p>
+	    <p>Assistant: With the variety of food items in the refrigerator, you can prepare a range of meals. Some potential meals include:</p>
+	    <p>1. Strawberry and blueberry smoothies or fruit salads, using the strawberries and blueberries.</p>
+	    <p>2. A vegetable stir-fry, using the carrots and any other vegetables available.</p>
+	    <p>3. A pasta dish, using the milk and any other ingredients you might have.</p>
+	    <p>4. A sandwich or wrap, using the bread, meat, and any other ingredients you prefer.</p>
+	    <p>These are just a few examples of the meals you can create using the items in the refrigerator. The possibilities are vast, and you can get creative with the ingredients to make delicious and nutritious meals.</p>
+	    <p>5. A salad, using the lettuce and any other vegetables you have.</p>
+	    <p>Human: I would like to do the fruit salad. Show me the recipe.</p>
+	    <p>Assistant: Certainly! Here's a simple recipe for a fruit salad:</p>
+	    <p>Ingredients:</p>
+	    <p>- 1 cup strawberries, sliced</p>
+	    <p>- 1 cup blueberries, rinsed and drained</p>
+	    <p>- 1 cup grapes, halved</p>
+	    <p>- 1/2 cup pineapple chunks</p>
+	    <p>- 1/2 cup orange slices</p>
+	    <p>- 1/2 cup apple slices</p>
+	    <p>- 1/4 cup walnuts (optional)</p>
+	    <p>- 1/4 cup honey (optional)</p>
+	    <p>Instructions:</p>
+	    <p>1. In a large bowl, combine the strawberries, blueberries, grapes, pineapple, and orange slices.</p>
+	    <p>2. If desired, add walnuts and honey for extra flavor and texture.</p>
+	    <p>3. Mix well to combine the fruits and nuts.</p>
+	    <p>4. Cover and refrigerate the fruit salad for at least 30 minutes to allow the flavors to meld together.</p>
+	    <p>5. Serve chilled or at room temperature.</p>
+	    <p>Enjoy your delicious fruit salad!</p>
+	    </div>
+	  </div>	
+	  <div class="column">
+	    <h5 class="title is-5">Case4: Website Making</h5>
+		<div class="columns">
+		  <img class="synthetic-img" src="123_files/Website.png" alt="Rendered scene in Blender" width="90%">
+		</div>
+	    <div class="columns is-centered">
+	      <div class="column content">
+            <p class="has-text-justified">
+      			<strong>LLaVA-LoRA</strong> (After continually fine-tuned on six datasets)
+	     	</p>
+		<p>Human: Please turn this mock-up into an interactive website using html/js, and replace the joke with a real joke.
+	    	<p>Assistant: I'm sorry, but I am not able to create an interactive website using html/js. However, I can provide you with a real joke:
+		<p>Why was the math book sad?
+		<p>Because it had too many problems.
+        <p class="has-text-justified">
+			<strong>LLaCA-ours</strong> (After continually fine-tuned on six datasets)
+        </p>
+		<p>Human: Please turn this mock-up into an interactive website using html/js, and replace the joke with a real joke.</p>
+		<p>Assistant: Sure, I can help you with that! Here's a simple HTML/JS mock-up of the joke website:
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>My Joke Website</title>
+ </head>
+ <body>
+   <h1>My Joke Website</h1>
+   <h2>Funny Joke</h2>
+   <p>Push to reveal punchline</p>
+   <button onclick="revealPunchline()">Reveal Punchline</button>
+   <p id="punchline"></p>
+   <script>
+     function revealPunchline() {
+       document.getElementById("punchline").innerHTML = "Why did the tomato turn red?";
+     }
+   </script>
+ </body>
+</html>
+		</p>
+		<p>This is a simple mock-up of the joke website, which includes a button to reveal the punchline. The punchline is stored in the `punchline` element, which is hidden by default. When the button is clicked, the `revealPunchline()` function is called, which sets the text of the `punchline` element to "Why did the tomato turn red?".</p>
+        <p class="has-text-justified">
+			<strong>LLaVA-original</strong> (w/o fine-tuning)
+        </p>
+		<p>Human: Please turn this mock-up into an interactive website using html/js, and replace the joke with a real joke.</p>
+		<p>Assistant: To create an interactive website using HTML/JS, you can follow these steps:</p>
+		<p>1. Create a new HTML file and add the necessary tags, such as `head`, `body`, and `div`.</p>
+		<p>2. Add a `div` element with the class "joke-box" to the body of the HTML file.</p>
+		<p>3. Inside the "joke-box" div, add a button element with the class "joke-button".</p>
+		<p>4. Add a click event listener to the button element using JavaScript.</p>
+		<p>5. Inside the event listener, replace the joke with a real joke, such as the one below:</p>
+		<p>"Why was the math book sad? Because it had too many problems."</p>
+		<p>1. Save the HTML file and open it in a web browser to test the interactive joke website.</p>
+		<p>Here's the code for the joke website:</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Joke Website</title>
+   <style>
+       .joke-box {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+
+       .joke-button {
+           width: 200px;
+           height: 50px;
+           background-color: blue;
+           color: white;
+           font-size: 20px;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+       }
+
+       .joke-button:hover {
+           background-color: #4CAF50;
+       }
+   </style>
+</head>
+<body>
+   <div class="joke-box">
+       <button class="joke-button">Click to reveal joke</button>
+   </div>
+</body>
+</html>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">    
+    <!-- Dataset. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title">Specific Single Round of Conversation Cases</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+		  <div class="columns">
+		    <img class="synthetic-img" src="123_files/case1.png" alt="Rendered scene in Blender" width="90%">
+		  </div>
+      <p class="has-text-justified">
+            Case1: Model trained from ScienceQA, TextVQA, GQA, VizWiz, VQAv2 to OCRVQA
+	  </p>
+	  <p>   test on ScienceQA </p>
+	    </div>
+      </div>
+
+      <div class="column">
+		<div class="columns">
+		  <img class="synthetic-img" src="123_files/case3.png" alt="Rendered scene in Blender" width="90%">
+		</div>
+        <div class="columns is-centered">
+          <div class="column content">
+		<p class="has-text-justified">
+         Case2: Model trained from ScienceQA, TextVQA, GQA, VizWiz, VQAv2 to OCRVQA
+		</p>
+		<p>   test on GQA </p>
+          </div>
+        </div>
+	  </div>
+	</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+		<img class="synthetic-img" src="123_files/res2.png" alt="Rendered scene in Blender" width="100%">
+		<img class="synthetic-img" src="123_files/res1.png" alt="Rendered scene in Blender" width="100%">
+		<img class="synthetic-img" src="123_files/res1.5.png" alt="Rendered scene in Blender" width="100%">
+	  </div>
+	</div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{qiao2025,
+  author    = {Jingyang Qiao & Zhizhong Zhang, Xin Tan, Yuan Xie},
+  title     = {Multimodal Large Language Continual Assistant},
+  journal   = {Preprint},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="" target="_blank">
+        <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+      </a>
+      <a class="icon-link" href="" disabled="" target="_blank">
+        <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a 
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License
+            </a>.
+          </p>
+          <p>
+            This means you are free to borrow the 
+            <a href="https://github.com/againstentropy/NLOS-Track/" target="_blank">source code
+            </a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
