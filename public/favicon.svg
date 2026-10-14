@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="19" fill="#173f3d"/>
-  <circle cx="32" cy="32" r="22" fill="none" stroke="#dce987" stroke-width="1.5" opacity=".65"/>
-  <circle cx="48" cy="17" r="4" fill="#e76d50"/>
-  <text x="32" y="38" fill="#fff" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle" letter-spacing="1">JQ</text>
-</svg>
